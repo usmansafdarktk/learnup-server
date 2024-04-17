@@ -27,6 +27,10 @@ app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use(cookieParser());
 app.use(express.json());
 
+app.use("/", (req, res) => {
+  res.send("Welcome to Your Backend Server!"); // Replace with your desired response
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/gigs", gigRoutes);
 app.use("/api/orders", orderRoutes);
